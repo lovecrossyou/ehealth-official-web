@@ -7,7 +7,7 @@ Vue.use(Router)
 //通过resolve实现按需加载
 
 const Index = resolve => require(['@/views/Index.vue'],resolve)
-// const About = resolve => require(['@/views/About.vue'],resolve)
+const IndexContent = resolve => require(['@/views/IndexContent.vue'],resolve)
 // const Connect = resolve => require(['@/views/Connect.vue'],resolve)
 // const Serve = resolve => require(['@/views/Serve.vue'],resolve)
 // const Detail = resolve => require(['@/views/Detail.vue'],resolve)
@@ -20,8 +20,8 @@ export default new Router({
       component:Index
     },
     {
-      path: '/index',
-      redirect:"/"
+      path: '/indexcontent',
+      component:IndexContent
     },
     // {
     //   path: '/about',
