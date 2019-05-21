@@ -1,7 +1,6 @@
 <template>
     <div class="index">
       <header class="header">
-        <Tabs ></Tabs>
         <div class="swiper-box rgba">
           <swiper :options="swiperOption" ref="swiper" class="z-index_-1">
             <swiper-slide v-for="(poster,index) in slides" :key="index" style="width:100%;height:450px;background: url(http://qnimage.xiteng.com/home.jpg) center center no-repeat;background-size: auto 100%; ">
@@ -11,65 +10,20 @@
           <div class="swiper-pagination"></div>
         </div>
       </header>
-      <Intro :intro="intro[0]"></Intro>
-
-      <Model1></Model1>
-
-      <Intro :intro="intro[1]"></Intro>
-
-      <div class="m2 container clearfix">
-        <template v-for="(el,i) in items">
-            <Item :itemprop="el" :index="i"></Item>
-        </template>
-      </div>
-
-      <div class="m-3">
-        <Intro :intro="intro[2]"></Intro>
-        <div class="clearfix container">
-          <div class="left width33 pad-lr-50">
-
-            <div class="bg-tip tip1"></div>
-            <div class="font-24 t-center mar-tb-32">经验与方法</div>
-            <div class="c-gray">我们拥有10余年的IT与移动互联网行业经验，服务数千家国内外企业，积累了众多行业经典案例，是业内知名的移动解决方案专家和领军企业。我们拥有超过多项业内权威的资质、专利及专业荣誉，是同业的标杆。</div>
-          </div>
-          <div class="left width33  pad-lr-50">
-            <div class="bg-tip tip2"></div>
-            <div class="font-24 t-center mar-tb-32">行业化</div>
-            <div class="c-gray">我们深耕企业应用多年，对每一个行业都富有技术与资源的积累，并为企业提出一系列创造性的建议，帮助企业实现卓越绩效。此外，我们在国际医药行业、供应链智能管理、智能办公、移动电子商务等前沿领域投入的早期研究，已实现商业价值的突破。</div>
-          </div>
-          <div class="left width33  pad-lr-50">
-            <div class="bg-tip tip3"></div>
-            <div class="font-24 t-center mar-tb-32">专业团队</div>
-            <div class="c-gray">我们管理团队和研发团队的成员均来自于Actiontec、IBM、HP、百度等，拥有专业的职业素养和前沿的开发思维，为客户搭建最有效的管理系统。</div>
-          </div>
-        </div>
-      </div>
-      <!-- <QQ></QQ> -->
       <Foot></Foot>
-
     </div>
 
 </template>
 
 <script>
-    import Tabs from '@/components/common/tabs'
     import Banner from '@/components/common/Banner'
-    import Intro from '@/components/common/Intro'
-    import Model1 from "@/components/index/model-1"
-    import Item from '@/components/index/item'
     import Foot from '@/components/common/foot'
-    import QQ from '@/components/common/qq'
 
     export default {
         name: "index",
         components:{
-          Tabs,
           Banner,
-          Intro,
-          Model1,
-          Item,
           Foot,
-          QQ
         },
         mounted(){
 
