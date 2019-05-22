@@ -1,6 +1,6 @@
 <template>
   <div class="main_content">
-    <div class="header"></div>
+    <!-- <div class="header"></div> -->
     <div class="index_content">
       <div class="content_left">
         <div class="btn_login">参赛登录</div>
