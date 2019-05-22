@@ -3,15 +3,18 @@
     <div class="header">
       <!--下拉导航-->
       <div class="wrapper_area">
-        <div class="nav_item" :class='{active: index === nowIndex}' v-for='(tabItem,index) in tabParams'
-             @mouseover='tabToggle(index)' @mouseout="tabToggle_auto">
-          <div :class='{dropdownBtn: index === 0}' @mouseover="dropdown">{{tabItem.title}}</div>
-          <div class="dropdownWrapper" v-show='index === needindex?true:false'>
-            <div v-for='(item,nedindex) in tabItem.child' :key="nedindex" class="dropdown_item">
-              {{item.title}}
+        <div class="top_nav">
+          <div class="nav_item" :class='{active: index === nowIndex}' v-for='(tabItem,index) in tabParams'
+               @mouseover='tabToggle(index)' @mouseout="tabToggle_auto">
+            <div :class='{dropdownBtn: index === 0}' @mouseover="dropdown">{{tabItem.title}}</div>
+            <div class="dropdownWrapper" v-show='index === needindex?true:false'>
+              <div v-for='(item,nedindex) in tabItem.child' :key="nedindex" class="dropdown_item">
+                {{item.title}}
+              </div>
             </div>
           </div>
         </div>
+
       </div>
       <div class="banner_bg"></div>
       <!--倒计时-->
@@ -60,8 +63,8 @@
               {title: "往届大赛"},
             ]
           },
-          { title: "通知公告"},
-          { title: "新闻中心"},
+          {title: "通知公告"},
+          {title: "新闻中心"},
           {
             title: "全国行业总决赛",
             child: [
@@ -73,7 +76,7 @@
               {title: "先进制造"},
             ]
           },
-          { title: "地方赛事"},
+          {title: "地方赛事"},
           {
             title: "专业赛事",
             child: [
@@ -132,7 +135,6 @@
       },
       dropdown: function () {
         // console.log(event.target.getAttribute('class'))
-
         if (event.target.getAttribute('class') === 'dropdownBtn') {
           this.dropdownActive = !this.dropdownActive;
         }
@@ -172,7 +174,6 @@
     height: 440px;
     background: url("https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2457415673,3693389573&fm=26&gp=0.jpg") no-repeat center center;
     background-size: 100%;
-    /*position: relative;*/
   }
 
   .time_text {
@@ -191,43 +192,49 @@
   }
 
   .wrapper_area {
+    width: 100%;
+    height: 48px;
+    background: #5ea600;
+  }
+  .top_nav{
+    width: 1180px;
+    height: 48px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     z-index: 999;
-  }
-
-  .wrapper_area > div {
+    margin: 0 auto;
     flex: 1;
     text-align: center;
-    height: 36px;
-    line-height: 36px;
+    line-height: 48px;
   }
 
-  .dropdownWrapper {
-    /*margin-top: 36px;*/
-    border: 1px solid #2C3E50;
+  .dropdown_wrapper {
     font-size: 14px;
+    width: 100%;
   }
 
   .dropdown_item {
     display: block;
-    background-color: #fff;
+    background-color:  rgba(94,166,0,0.5);
   }
 
   .nav_item {
+    flex: 1;
     font-size: 16px;
+    color: #fff;
   }
 
-  .nav_item.active {
-    background: #e3e3d3;
+  .nav_item .active {
+    flex: 1;
+    background:  rgba(94,166,0,0.5);
   }
 
-  .dropdownBtn {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-  }
+  /*.dropdownBtn {*/
+  /*display: inline-block;*/
+  /*width: 100%;*/
+  /*height: 100%;*/
+  /*}*/
 
   .nav_item {
     cursor: pointer;
