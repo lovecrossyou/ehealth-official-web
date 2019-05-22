@@ -347,7 +347,7 @@ export default {};
 <style scoped>
 .main_content {
   width: 1180px;
-  margin: auto;
+  margin: 40px auto 0 auto;
 }
 .header {
   width: 100%;
