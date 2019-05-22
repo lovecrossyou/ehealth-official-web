@@ -7,10 +7,8 @@
           <div class="nav_item" :class='{active: index === nowIndex}' v-for='(tabItem,index) in tabParams'
                @mouseover='tabToggle(index)' @mouseout="tabToggle_auto">
             <div :class='{dropdownBtn: index === 0}' @mouseover="dropdown">{{tabItem.title}}</div>
-            <div class="dropdownWrapper" v-show='index === needindex?true:false'>
-              <div v-for='(item,nedindex) in tabItem.child' :key="nedindex" class="dropdown_item">
-                {{item.title}}
-              </div>
+            <div class="dropdown_wrapper" v-show='index === needindex?true:false'>
+              <div v-for='(item,nedindex) in tabItem.child' :key="nedindex" :class='{sub_active: subIndex === nedindex}' class="dropdown_item" @mouseover="subItemOver(nedindex)">{{item.title}}</div>
             </div>
           </div>
         </div>
@@ -24,7 +22,7 @@
         <div class="time_text">天</div>
         <div class="count_down_text">{{hr}}</div>
         <div class="time_text">时</div>
-        <div class="count_down_text">{{hr}}</div>
+        <div class="count_down_text">{{minute}}</div>
         <div class="time_text">分</div>
         <div class="count_down_text">{{sec}}</div>
         <div class="time_text">秒</div>
@@ -32,7 +30,6 @@
     </div>
     <IndexContent></IndexContent>
     <Foot></Foot>
-
   </div>
 </template>
 
@@ -51,6 +48,7 @@
         minute: 0,
         sec: 0,
         nowIndex: 999,
+        subIndex:-1,
         dropdownActive: true,
         tabParams: [
           {title: "首页"},
@@ -97,12 +95,11 @@
               {title: "大企业对接"}
             ]
           },
-
         ]
       };
     },
     mounted: function () {
-      this.countTime();
+      this.countdown();
     },
     components: {
       Banner,
@@ -110,31 +107,32 @@
       IndexContent
     },
     methods: {
+      subItemOver(index){
+        this.subIndex = index;
+        console.log('xxxxx ', index);
+      },
       tabToggle_auto() {
         this.needindex = 999;
         this.nowIndex = 999;
       },
-      countTime: function () {
-        //获取当前时间
-        var date = new Date();
-        var now = date.getTime();
-        //设置截止时间
-        var endDate = new Date("2019-6-22 23:23:23");
-        var end = endDate.getTime();
-        //时间差
-        var leftTime = end - now;
-        //定义变量 d,h,m,s保存倒计时的时间
-        if (leftTime >= 0) {
-          this.day = Math.floor(leftTime / 1000 / 60 / 60 / 24);
-          this.hr = Math.floor((leftTime / 1000 / 60 / 60) % 24);
-          this.minute = Math.floor((leftTime / 1000 / 60) % 60);
-          this.sec = Math.floor((leftTime / 1000) % 60);
-        }
-        //递归每秒调用countTime方法，显示动态时间效果
-        setTimeout(this.countTime, 1000);
+      countdown: function () {
+        const end = Date.parse(new Date('2019-12-01'));
+        const now = Date.parse(new Date());
+        const msec = end - now;
+        let day = parseInt(msec / 1000 / 60 / 60 / 24);
+        let hr = parseInt(msec / 1000 / 60 / 60 % 24);
+        let minute = parseInt(msec / 1000 / 60 % 60);
+        let sec = parseInt(msec / 1000 % 60);
+        this.day = day;
+        this.hr = hr > 9 ? hr : '0' + hr;
+        this.minute = minute > 9 ? minute : '0' + minute;
+        this.sec = sec > 9 ? sec : '0' + sec;
+        const that = this;
+        setTimeout(function () {
+          that.countdown()
+        }, 1000)
       },
       dropdown: function () {
-        // console.log(event.target.getAttribute('class'))
         if (event.target.getAttribute('class') === 'dropdownBtn') {
           this.dropdownActive = !this.dropdownActive;
         }
@@ -195,48 +193,55 @@
     width: 100%;
     height: 48px;
     background: #5ea600;
-  }
-  .top_nav{
-    width: 1180px;
-    height: 48px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     z-index: 999;
+  }
+  .top_nav{
+    width: 1180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
     margin: 0 auto;
-    flex: 1;
-    text-align: center;
-    line-height: 48px;
   }
 
   .dropdown_wrapper {
     font-size: 14px;
-    width: 100%;
   }
 
   .dropdown_item {
     display: block;
     background-color:  rgba(94,166,0,0.5);
-  }
-
-  .nav_item {
-    flex: 1;
-    font-size: 16px;
     color: #fff;
   }
 
-  .nav_item .active {
-    flex: 1;
-    background:  rgba(94,166,0,0.5);
-  }
-
-  /*.dropdownBtn {*/
-  /*display: inline-block;*/
-  /*width: 100%;*/
-  /*height: 100%;*/
-  /*}*/
-
   .nav_item {
+    color: #fff;
+    font-size: 16px;
+    flex: 1;
+    text-align: center;
+    height: 48px;
+    line-height: 48px;
     cursor: pointer;
+
   }
+
+  .nav_item.active {
+    background: #73B221;
+  }
+
+  .dropdownBtn {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sub_active{
+    color: #5ea600 !important;
+    background-color: rgba(255,255,255,0.8);
+  }
+
 </style>
