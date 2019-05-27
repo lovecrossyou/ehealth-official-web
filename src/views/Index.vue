@@ -60,7 +60,7 @@
     <div>
       <IndexContent></IndexContent>
     </div>
-    <!-- <Foot></Foot> -->
+    <Foot></Foot>
   </div>
 </template>
 
