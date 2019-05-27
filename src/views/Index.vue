@@ -40,30 +40,31 @@
       </div>
       <div class="banner_bg">
         <img src="http://qnimage.xiteng.com/banner_bk@2x.png" alt>
-        <!--倒计时-->
-        <div class="count_down">
-          <div class="time_text">距报名截止还有</div>
-          <div class="count_down_text">{{day}}</div>
-          <div class="time_text">天</div>
-          <div class="count_down_text">{{hr}}</div>
-          <div class="time_text">时</div>
-          <div class="count_down_text">{{minute}}</div>
-          <div class="time_text">分</div>
-          <div class="count_down_text">{{sec}}</div>
-          <div class="time_text">秒</div>
+        <div class="main_cont">
+          <!--倒计时-->
+          <div class="count_down">
+            <div class="time_text">距报名截止还有</div>
+            <div class="count_down_text">{{day}}</div>
+            <div class="time_text">天</div>
+            <div class="count_down_text">{{hr}}</div>
+            <div class="time_text">时</div>
+            <div class="count_down_text">{{minute}}</div>
+            <div class="time_text">分</div>
+            <div class="count_down_text">{{sec}}</div>
+            <div class="time_text">秒</div>
+          </div>
+          <div class="apply_btn">报名参赛</div>
         </div>
-        <div class="apply_btn">报名参赛</div>
       </div>
     </div>
     <div>
       <IndexContent></IndexContent>
     </div>
-    <!-- <Foot></Foot> -->
+    <Foot></Foot>
   </div>
 </template>
 
 <script>
-import Banner from "@/components/common/Banner";
 import Foot from "@/components/common/foot";
 import IndexContent from "./IndexContent";
 
@@ -131,7 +132,6 @@ export default {
     this.countdown();
   },
   components: {
-    Banner,
     Foot,
     IndexContent
   },
@@ -218,7 +218,7 @@ export default {
   border: none;
   outline: none;
   background-color: rgba(243, 246, 248, 1);
-  margin-left: 15px;
+  margin:0 15px;
 }
 .search_btn {
   width: 81px;
@@ -233,9 +233,10 @@ export default {
   outline: none;
   cursor: pointer;
 }
-.magnifying_img image {
+.magnifying_img img {
   width: 14px;
   height: 15px;
+  margin-top: 4px;
 }
 
 .count_down {
@@ -246,16 +247,11 @@ export default {
   color: #fff;
   font-size: 18px;
   align-items: center;
-  position: absolute;
-  left: 27%;
 }
 
 .banner_bg {
   width: 100%;
   height: 409px;
-  /* background: url("http://qnimage.xiteng.com/banner_bk@2x.png") no-repeat center */
-  /* center; */
-  /* background-size: 100%; */
   padding-top: 210px;
   box-sizing: border-box;
   position: relative;
@@ -352,9 +348,10 @@ export default {
   font-size: 18px;
   margin: 30px auto 0 auto;
   font-weight: bold;
-
-   position: absolute;
-  left: 40%;
-  bottom: 60px;
+  cursor: pointer;
+}
+.main_cont{
+  position: absolute;
+  left: 34%;
 }
 </style>
