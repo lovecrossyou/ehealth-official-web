@@ -31,7 +31,7 @@
           <NaviTitle title="大赛公告"></NaviTitle>
         </div>
         <div style="height: 100px;">
-          <el-steps direction="vertical" :active="1" space="20">
+          <el-steps direction="vertical">
             <el-step title="科技部关于举办第八届中国创新创业大赛的通知  " icon="el-icon-loading"></el-step>
             <el-step title="科技部火炬中心关于组织第七届中国创新创业大赛优秀企业" icon="el-icon-loading"></el-step>
             <el-step title="关于对第七届中国创新创业大赛优秀组织单位进行表彰的通知  " description icon="el-icon-loading"></el-step>
@@ -56,11 +56,15 @@
           <div class="game_login">工作登录</div>
 
           <!-- 报名热线 -->
-          <div>报名热线</div>
-          <div>010</div>
-
-          <div>报名热线</div>
-          <div>报名热线</div>
+          <div class="login-desc-wrapper">
+            <div class="login-desc">报名热线</div>
+            <div class="login-desc">010-88656381/6382/6219</div>
+            <div class="login-desc">技术支持</div>
+            <div class="login-desc">010-88656381/6382/6219</div>
+            <div class="login-desc-blue">联系我们</div>
+            <div class="login-desc-blue">地方赛事咨询方式</div>
+            <div class="login-desc-blue">常见问题解答</div>
+          </div>
         </div>
         <NaviTitle title="众扶平台"></NaviTitle>
       </div>
@@ -82,12 +86,14 @@ export default {
   width: 1048px;
   display: flex;
   flex-direction: row;
+  margin: auto;
+  /* padding: 0 195px; */
 }
 
 .index_content {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 1048px;
 }
 
 .content_left {
@@ -156,5 +162,21 @@ export default {
 
   margin-top: 13px;
   margin-left: 15px;
+}
+
+.login-desc-wrapper {
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.login-desc {
+  color: #333333;
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.login-desc-blue {
+  color: #53a8e8;
+  font-size: 11px;
 }
 </style>
