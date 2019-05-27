@@ -1,6 +1,18 @@
 <template>
   <div class="wrapper">
     <div class="header">
+      <!--logo & 搜索框-->
+      <div class="top_area">
+        <div class="logo_img">
+          <img src="http://qnimage.xiteng.com/logo@2x.png" alt="">
+        </div>
+        <div class="search_box_area">
+          <div class="magnifying_img"><img src="http://qnimage.xiteng.com/sousuo@2x.png" alt=""></div>
+          <input type="search" placeholder="请输入搜索内容">
+          <button>搜索</button>
+        </div>
+
+      </div>
       <!--下拉导航-->
       <div class="wrapper_area">
         <div class="top_nav">
@@ -12,7 +24,6 @@
             </div>
           </div>
         </div>
-
       </div>
       <div class="banner_bg"></div>
       <!--倒计时-->
@@ -157,6 +168,37 @@
 
   .header {
     width: 100%;
+  }
+
+  .top_area{
+    width: 1048px;
+    background-color: pink;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0 21px 0;
+    box-sizing: border-box;
+  }
+  .logo_img image{
+    width: 255px;
+    height: 44px;
+  }
+  .search_box_area{
+    width: 369px;
+    height: 24px;
+    background:rgba(243,246,248,1);
+    border:1px solid rgba(223, 223, 223, 1);
+    border-radius:12px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    box-sizing: border-box;
+  }
+  .magnifying_img image{
+    width: 14px;
+    height: 15px;
   }
 
   .count_down {
