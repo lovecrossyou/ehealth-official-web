@@ -27,10 +27,10 @@
           </div>
         </div>
 
-        <div style="padding:10px 0;">
+        <div style="padding:20px 0 15px 0;">
           <NaviTitle title="大赛公告"></NaviTitle>
         </div>
-        <div style="height: 100px;">
+        <div>
           <el-steps direction="vertical">
             <el-step title="科技部关于举办第八届中国创新创业大赛的通知  " icon="el-icon-loading"></el-step>
             <el-step title="科技部火炬中心关于组织第七届中国创新创业大赛优秀企业" icon="el-icon-loading"></el-step>
@@ -39,6 +39,21 @@
             <el-step title="第七届中国创新创业大赛生物医药行业总决赛获奖及优秀企业名单公示" icon="el-icon-loading"></el-step>
             <el-step title="第七届中国创新创业大赛生物医药行业总决赛获奖及优秀企业名单公示" icon="el-icon-loading"></el-step>
           </el-steps>
+        </div>
+
+        <!-- 全国行业总决赛 专业赛事-->
+        <div class="quanguo-game-wrapper">
+          <div class="quanguo-game-item">生物医药</div>
+          <div class="quanguo-game-item">电子信息</div>
+          <div class="quanguo-game-item">新能源及节能环保</div>
+          <div class="quanguo-game-item">互联网</div>
+          <div class="quanguo-game-item">新材料</div>
+          <div class="quanguo-game-item">先进制造</div>
+        </div>
+
+        <!-- 大企业需求对接 -->
+        <div style="padding-top:20px;">
+          <NaviTitle title="大企业需求对接"></NaviTitle>
         </div>
       </div>
 
@@ -106,10 +121,42 @@ export default {
   flex-direction: row;
 }
 
+.quanguo-game-wrapper {
+  width: 388px;
+  height: 97px;
+
+  border-top: solid 2px #53a8e8;
+  border-left: solid 1px #c9dff2;
+  border-right: solid 1px #c9dff2;
+  border-bottom: solid 1px #c9dff2;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
+  padding: 6px 17px;
+  box-sizing: border-box;
+}
+
+.quanguo-game-item {
+  /* width: 86px; */
+  height: 33px;
+  background: rgba(238, 238, 238, 1);
+  border-radius: 3px;
+  color: #1f1f1f;
+  font-size: 11px;
+  text-align: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  margin: 4px 6px;
+  /* line-height: 13px; */
+}
+
 .center_content {
   flex: 1;
   /* background-color: aqua; */
   height: 300px;
+  padding: 0 30px;
 }
 .right_list {
   width: 200px;
