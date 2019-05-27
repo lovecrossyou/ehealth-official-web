@@ -31,7 +31,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 30px;
+  height: 40px;
   justify-content: space-between;
   width: 100%;
 }

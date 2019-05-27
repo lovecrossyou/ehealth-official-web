@@ -1,7 +1,7 @@
 <template>
   <div class="main_content">
     <div class="index_content">
-      <!-- 左侧面板 -->
+      <!-- 左侧面板 ------------------------------->
       <div class="content_left">
         <!-- 媒体聚焦 -->
         <div>
@@ -55,14 +55,32 @@
         <div style="padding-top:20px;">
           <NaviTitle title="大企业需求对接"></NaviTitle>
         </div>
+
+        <div class="big-business">
+          <div class="big-business-item"></div>
+          <div class="big-business-item"></div>
+          <div class="big-business-item"></div>
+          <div class="big-business-item"></div>
+        </div>
       </div>
 
-      <!-- 中间内容 -->
+      <!-- 中间内容 ------------------------------->
       <div class="center_content">
         <NaviTitle title="大赛新闻"></NaviTitle>
+        <div class="top-news">
+          <div class="top-news-image"></div>
+          <div style="padding-left:13px;">
+            <div class="news-title">江阴|2019年中国江阴（高新区）创新 创业大赛总决赛即将</div>
+            <div class="news-desc">以特钢新材料及制品、微电子集成电路、现代中药和生物医药、机械智能制造等高层次产.....</div>
+            <div class="news-footer">
+              <div class="news-footer-source">来源：江阴高新区</div>
+              <div class="news-footer-time">2019-05-22</div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- 右侧内容 -->
+      <!-- 右侧内容 ------------------------------->
       <div class="right_list">
         <div class="login-wrapper">
           <!-- 参赛登录 -->
@@ -102,7 +120,7 @@ export default {
   display: flex;
   flex-direction: row;
   margin: auto;
-  /* padding: 0 195px; */
+  padding-top: 15px;
 }
 
 .index_content {
@@ -138,6 +156,60 @@ export default {
   box-sizing: border-box;
 }
 
+.news-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+
+.news-footer-source {
+  /* width:83px;
+height:11px; */
+  font-size: 11px;
+  font-family: SimSun;
+  font-weight: 400;
+  color: rgba(83, 168, 232, 1);
+  /* line-height:18px; */
+}
+
+.news-footer-time {
+  font-size: 11px;
+  font-family: SimSun;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 18px;
+}
+
+.news-title {
+  /* width:206px;
+height:30px; */
+  font-size: 12px;
+  font-family: SimSun;
+  font-weight: bold;
+  color: rgba(50, 50, 50, 1);
+  /* line-height:18px; */
+}
+.news-desc {
+  font-size: 9px;
+  font-family: SimSun;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 16px;
+}
+
+.big-business {
+  width: 388px;
+  height: 129px;
+
+  border-top: solid 2px #53a8e8;
+  border-left: solid 1px #c9dff2;
+  border-right: solid 1px #c9dff2;
+  border-bottom: solid 1px #c9dff2;
+}
+
 .quanguo-game-item {
   /* width: 86px; */
   height: 33px;
@@ -152,11 +224,40 @@ export default {
   /* line-height: 13px; */
 }
 
+.big-business {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 26px 16px;
+  box-sizing: border-box;
+}
+
+.big-business-item {
+  height: 30px;
+  width: 87px;
+  border: dashed 1px #333;
+  margin-top: 6px;
+  margin-right: 10px;
+}
+
 .center_content {
   flex: 1;
   /* background-color: aqua; */
-  height: 300px;
+  /* height: 300px; */
   padding: 0 30px;
+}
+
+.top-news {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.top-news-image {
+  width: 185px;
+  height: 110px;
+  background: url("http://qnimage.xiteng.com/p_2@2x.png") no-repeat center;
+  background-size: 185px 110px;
 }
 .right_list {
   width: 200px;
