@@ -202,7 +202,7 @@ export default {
   display: flex;
   flex-direction: row;
   width: 1048px;
-  height: 845px;
+  /* height: 845px; */
 }
 
 .main-left {
