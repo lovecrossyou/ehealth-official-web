@@ -132,24 +132,24 @@
             </div>
           </div>
         </div>
-        <div style="padding-top:20px;">
+        <div style="padding-top:20px;padding-right:20px;">
           <NaviTitle title="项目直通车 "></NaviTitle>
         </div>
         <div class="project-items">
           <div class="project-item">
-            <img class="project-item-logo" src="http://qnimage.xiteng.com/p_7@2x.png"/>
+            <img class="project-item-logo" src="http://qnimage.xiteng.com/p_7@2x.png">
             <div class="project-item-title">“花开花落”创意有限责任公司</div>
           </div>
           <div class="project-item">
-            <img class="project-item-logo" src="http://qnimage.xiteng.com/p_7@2x.png"/>
+            <img class="project-item-logo" src="http://qnimage.xiteng.com/p_7@2x.png">
             <div class="project-item-title">第三创意人力资源有限公司</div>
           </div>
           <div class="project-item">
-            <img class="project-item-logo" src="http://qnimage.xiteng.com/p_7@2x.png"/>
+            <img class="project-item-logo" src="http://qnimage.xiteng.com/p_7@2x.png">
             <div class="project-item-title">”濠江映画“特色手工画舫商 业计划书</div>
           </div>
           <div class="project-item">
-            <img class="project-item-logo" src="http://qnimage.xiteng.com/p_7@2x.png"/>
+            <img class="project-item-logo" src="http://qnimage.xiteng.com/p_7@2x.png">
             <div class="project-item-title">”濠江映画“特色手工画舫商 业计划书</div>
           </div>
         </div>
@@ -175,6 +175,20 @@
           </div>
         </div>
         <NaviTitle title="众扶平台"></NaviTitle>
+
+        <div class="fuzhong-items">
+          <img src="http://qnimage.xiteng.com/P_10@2x.png" alt>
+          <img src="http://qnimage.xiteng.com/P_10@2x.png" alt>
+          <img src="http://qnimage.xiteng.com/P_10@2x.png" alt>
+          <img src="http://qnimage.xiteng.com/P_10@2x.png" alt>
+        </div>
+
+        <!-- 合作伙伴 -->
+        <NaviTitle title="合作伙伴"></NaviTitle>
+        <div class="partners">
+          <img src="http://qnimage.xiteng.com/logo_7@2x.png" alt=''>
+          <img src="http://qnimage.xiteng.com/logo_8@2x.png" alt=''>
+        </div>
       </div>
     </div>
   </div>
@@ -205,6 +219,12 @@ export default {
   /* height: 845px; */
 }
 
+.fuzhong-items > img {
+  width: 196px;
+  height: 98px;
+  margin-top: 7px;
+}
+
 .main-left {
   display: flex;
   flex-direction: row;
@@ -213,6 +233,13 @@ export default {
 .content_left {
   flex: 1;
   /* background-color: blue; */
+}
+
+.partners > img {
+  width: 117px;
+  height: 36px;
+  margin-left: 38px;
+  margin-top: 43px;
 }
 
 .meiti-items {
@@ -235,6 +262,15 @@ export default {
   /* justify-content: space-around; */
   padding: 6px 17px;
   box-sizing: border-box;
+}
+
+.partners {
+  width: 186px;
+  height: 211px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(237, 237, 237, 1);
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.07);
+  border-radius: 3px;
 }
 
 .news-footer {
