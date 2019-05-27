@@ -7,11 +7,14 @@ import store from './store/store.js'//vuex
 import BabelPolyFill from 'babel-polyfill'//兼容ie
 import VueAwesomeSwiper from 'vue-awesome-swiper'//轮播图
 import 'swiper/dist/css/swiper.css'//轮播图样式
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
 Vue.config.productionTip = false
 
 Vue.use(BabelPolyFill)
 Vue.use(VueAwesomeSwiper)
+Vue.use(ElementUI)
 
 /* eslint-disable no-new */
 new Vue({

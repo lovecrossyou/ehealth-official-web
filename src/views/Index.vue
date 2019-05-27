@@ -39,6 +39,7 @@
         </div>
       </div>
       <div class="banner_bg">
+        <img src="http://qnimage.xiteng.com/banner_bk@2x.png" alt>
         <!--倒计时-->
         <div class="count_down">
           <div class="time_text">距报名截止还有</div>
@@ -245,16 +246,25 @@ export default {
   color: #fff;
   font-size: 18px;
   align-items: center;
+  position: absolute;
+  left: 27%;
 }
 
 .banner_bg {
   width: 100%;
   height: 409px;
-  background: url("http://qnimage.xiteng.com/banner_bk@2x.png") no-repeat center
-    center;
-  background-size: 100%;
+  /* background: url("http://qnimage.xiteng.com/banner_bk@2x.png") no-repeat center */
+  /* center; */
+  /* background-size: 100%; */
   padding-top: 210px;
   box-sizing: border-box;
+  position: relative;
+}
+.banner_bg > img {
+  width: 100%;
+  height: 409px;
+  position: absolute;
+  top: 0;
 }
 
 .time_text {
@@ -335,12 +345,16 @@ export default {
     rgba(84, 151, 210, 1) 100%
   );
   border-radius: 25px;
-  box-shadow:0px 5px 10px 0px #27618F;
+  box-shadow: 0px 5px 10px 0px #27618f;
   text-align: center;
   line-height: 50px;
   color: #fff;
   font-size: 18px;
   margin: 30px auto 0 auto;
   font-weight: bold;
+
+   position: absolute;
+  left: 40%;
+  bottom: 60px;
 }
 </style>

@@ -3,9 +3,9 @@
     <div class="nav">
       <div class="top">
         <div class="v-line"></div>
-        <div class="nav-name">大赛新闻</div>
+        <div class="nav-name">{{title}}</div>
       </div>
-      <div class="more"></div>
+      <div class="more">MORE</div>
     </div>
     <div class="nav-botline"></div>
   </div>
@@ -13,7 +13,8 @@
 
 <script>
 export default {
-  name: "foot"
+  name: "foot",
+  props: ["title"]
 };
 </script>
 
@@ -22,21 +23,26 @@ export default {
   display: flex;
   flex-direction: column;
   width: 100%;
+  overflow: hidden;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 .nav {
   display: flex;
   flex-direction: row;
   align-items: center;
   height: 30px;
+  justify-content: space-between;
+  width: 100%;
 }
 .nav-botline {
-  width: 260px;
+  width: 98%;
   height: 1px;
   background: rgba(237, 237, 237, 1);
 }
 
 .more {
-  width: 21px;
+  /* width: 21px; */
   height: 6px;
   font-size: 7px;
   font-family: MicrosoftYaHei;
@@ -65,5 +71,15 @@ export default {
   font-weight: 400;
   color: rgba(20, 121, 215, 1);
   line-height: 12px;
+}
+
+.more {
+  height: 30px;
+  font-size: 11px;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(20, 121, 215, 1);
+  line-height: 18px;
+  padding-top: 10px;
 }
 </style>
