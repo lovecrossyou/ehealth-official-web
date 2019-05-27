@@ -54,8 +54,8 @@ export default {
 
 <style>
   /*   css引入方式    */
-  @import "css/reset.css";
+  /* @import "css/reset.css";
   @import "css/common.css";
-  @import "css/index.css";
+  @import "css/index.css"; */
 
 </style>

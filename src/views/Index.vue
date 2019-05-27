@@ -39,8 +39,10 @@
         <div class="time_text">秒</div>
       </div>
     </div>
-    <IndexContent></IndexContent>
-    <Foot></Foot>
+    <div>
+      <IndexContent></IndexContent>
+    </div>
+    <!-- <Foot></Foot> -->
   </div>
 </template>
 
