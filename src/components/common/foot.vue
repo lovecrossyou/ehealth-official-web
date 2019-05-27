@@ -41,6 +41,7 @@
   margin-top: 35px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .footer_area {
   width: 710px;
@@ -86,6 +87,8 @@
   width: 100%;
   height: 1px;
   background-color: #565656;
+  position: absolute;
+  bottom: 98px;
 }
 .copyright_area {
   width: 710px;
