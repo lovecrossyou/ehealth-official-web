@@ -125,6 +125,7 @@
             </div>
             <div class="short-news">
               <div class="short-news-item">广西|第八届中国创新创业大赛广西赛区暨2019年广西创新创业大赛正式启动</div>
+              <div class="short-news-item">广西|第八届中国创新创业大赛广西赛区暨2019年广西创新创业大赛正式启动</div>
             </div>
 
             <!-- 赛友捷报 -->
@@ -143,6 +144,8 @@
               </div>
             </div>
             <div class="short-news">
+              <div class="short-news-item">广西|第八届中国创新创业大赛广西赛区暨2019年广西创新创业大赛正式启动</div>
+              <div class="short-news-item">广西|第八届中国创新创业大赛广西赛区暨2019年广西创新创业大赛正式启动</div>
               <div class="short-news-item">广西|第八届中国创新创业大赛广西赛区暨2019年广西创新创业大赛正式启动</div>
             </div>
           </div>
