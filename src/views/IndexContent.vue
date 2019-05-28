@@ -199,7 +199,9 @@
         </div>
 
         <!-- 合作伙伴 -->
-        <NaviTitle title="合作伙伴"></NaviTitle>
+        <div style="padding-top:20px;padding-right:20px;">
+          <NaviTitle title="合作伙伴 "></NaviTitle>
+        </div>
         <div class="partners">
           <img src="http://qnimage.xiteng.com/logo_7@2x.png" alt>
           <img src="http://qnimage.xiteng.com/logo_8@2x.png" alt>
@@ -271,7 +273,7 @@ export default {
 .fuzhong-items > img {
   width: 196px;
   height: 98px;
-  margin-top: 7px;
+  margin-top: 10px;
 }
 
 .main-left {
