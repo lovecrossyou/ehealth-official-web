@@ -410,7 +410,6 @@ height:30px; */
   border: dashed 1px #333;
   margin-bottom: 16px;
   margin-right: 10px;
-
 }
 
 .center_content {
@@ -434,7 +433,7 @@ ul {
 .project-item {
   display: flex;
   flex-direction: column;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
   width: 195px;
   height: 192px;
@@ -466,7 +465,15 @@ ul {
   font-family: SimSun;
   font-weight: 400;
   color: rgba(50, 50, 50, 1);
-  line-height: 24px;
+
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+
+  -webkit-line-clamp: 1;
+
+  overflow: hidden;
+  line-height: 30px;
 }
 
 .top-news {
