@@ -125,6 +125,7 @@
             </div>
             <div class="short-news">
               <div class="short-news-item">广西|第八届中国创新创业大赛广西赛区暨2019年广西创新创业大赛正式启动</div>
+              <div class="short-news-item">广西|第八届中国创新创业大赛广西赛区暨2019年广西创新创业大赛正式启动</div>
             </div>
 
             <!-- 赛友捷报 -->
@@ -143,6 +144,8 @@
               </div>
             </div>
             <div class="short-news">
+              <div class="short-news-item">广西|第八届中国创新创业大赛广西赛区暨2019年广西创新创业大赛正式启动</div>
+              <div class="short-news-item">广西|第八届中国创新创业大赛广西赛区暨2019年广西创新创业大赛正式启动</div>
               <div class="short-news-item">广西|第八届中国创新创业大赛广西赛区暨2019年广西创新创业大赛正式启动</div>
             </div>
           </div>
@@ -410,7 +413,6 @@ height:30px; */
   border: dashed 1px #333;
   margin-bottom: 16px;
   margin-right: 10px;
-
 }
 
 .center_content {
@@ -434,7 +436,7 @@ ul {
 .project-item {
   display: flex;
   flex-direction: column;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
   width: 195px;
   height: 192px;
@@ -466,7 +468,15 @@ ul {
   font-family: SimSun;
   font-weight: 400;
   color: rgba(50, 50, 50, 1);
-  line-height: 24px;
+
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+
+  -webkit-line-clamp: 1;
+
+  overflow: hidden;
+  line-height: 30px;
 }
 
 .top-news {
