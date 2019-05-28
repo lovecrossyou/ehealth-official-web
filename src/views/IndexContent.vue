@@ -464,7 +464,7 @@ ul {
   font-family: SimSun;
   font-weight: 400;
   color: rgba(50, 50, 50, 1);
-  /* line-height: 24px; */
+  line-height: 24px;
 }
 
 .top-news {
