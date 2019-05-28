@@ -39,25 +39,40 @@
               <NaviTitle title="大赛公告"></NaviTitle>
             </div>
             <div>
-              <el-steps direction="vertical">
-                <el-step title="科技部关于举办第八届中国创新创业大赛的通知  " icon="el-icon-loading"></el-step>
-                <el-step title="科技部火炬中心关于组织第七届中国创新创业大赛优秀企业" icon="el-icon-loading"></el-step>
-                <el-step title="关于对第七届中国创新创业大赛优秀组织单位进行表彰的通知  " description icon="el-icon-loading"></el-step>
-                <el-step title="第七届中国创新创业大赛新材料行业总决赛获奖及优秀企业名单公示" icon="el-icon-loading"></el-step>
-                <el-step title="第七届中国创新创业大赛生物医药行业总决赛获奖及优秀企业名单公示" icon="el-icon-loading"></el-step>
-                <el-step title="第七届中国创新创业大赛生物医药行业总决赛获奖及优秀企业名单公示" icon="el-icon-loading"></el-step>
-              </el-steps>
+              <el-timeline :reverse="reverse">
+                <el-timeline-item
+                  v-for="(activity, index) in activities"
+                  :key="index"
+                  :size="normal"
+                  :color="activity.color"
+                  :timestamp="activity.timestamp"
+                >{{activity.content}}</el-timeline-item>
+              </el-timeline>
             </div>
 
             <!-- 全国行业总决赛 专业赛事-->
-            <div class="quanguo-game-wrapper">
-              <div class="quanguo-game-item">生物医药</div>
-              <div class="quanguo-game-item">电子信息</div>
-              <div class="quanguo-game-item">新能源及节能环保</div>
-              <div class="quanguo-game-item">互联网</div>
-              <div class="quanguo-game-item">新材料</div>
-              <div class="quanguo-game-item">先进制造</div>
-            </div>
+            <el-tabs v-model="activeName" @tab-click="handleClick" type="card">
+              <el-tab-pane label="全国行业总决赛" name="first">
+                <div class="quanguo-game-wrapper">
+                  <div class="quanguo-game-item">生物医药</div>
+                  <div class="quanguo-game-item">电子信息</div>
+                  <div class="quanguo-game-item">新能源及节能环保</div>
+                  <div class="quanguo-game-item">互联网</div>
+                  <div class="quanguo-game-item">新材料</div>
+                  <div class="quanguo-game-item">先进制造</div>
+                </div>
+              </el-tab-pane>
+              <el-tab-pane label="专业赛事" name="second">
+                <div class="quanguo-game-wrapper">
+                  <div class="quanguo-game-item">生物医药</div>
+                  <div class="quanguo-game-item">电子信息</div>
+                  <div class="quanguo-game-item">新能源及节能环保</div>
+                  <div class="quanguo-game-item">互联网</div>
+                  <div class="quanguo-game-item">新材料</div>
+                  <div class="quanguo-game-item">先进制造</div>
+                </div>
+              </el-tab-pane>
+            </el-tabs>
 
             <!-- 大企业需求对接 -->
             <div style="padding-top:20px;">
@@ -186,8 +201,8 @@
         <!-- 合作伙伴 -->
         <NaviTitle title="合作伙伴"></NaviTitle>
         <div class="partners">
-          <img src="http://qnimage.xiteng.com/logo_7@2x.png" alt=''>
-          <img src="http://qnimage.xiteng.com/logo_8@2x.png" alt=''>
+          <img src="http://qnimage.xiteng.com/logo_7@2x.png" alt>
+          <img src="http://qnimage.xiteng.com/logo_8@2x.png" alt>
         </div>
       </div>
     </div>
@@ -197,6 +212,40 @@
 <script>
 import NaviTitle from "@/components/common/NaviTitle.vue";
 export default {
+  data() {
+    return {
+      activeName: "first",
+      reverse: true,
+      activities: [
+        {
+          timestamp: "科技部关于举办第八届中国创新创业大赛的通知",
+          color: "#AFC3D4"
+        },
+        {
+          timestamp: "科技部火炬中心关于组织第七届中国创新创业大赛优秀企业",
+          color: "#AFC3D4"
+        },
+        {
+          timestamp: "关于对第七届中国创新创业大赛优秀组织单位进行表彰的通知",
+          color: "#AFC3D4"
+        },
+        {
+          timestamp: "科技部火炬中心关于组织第七届中国创新创业大赛优秀企业",
+          color: "#AFC3D4"
+        },
+        {
+          timestamp: "关于对第七届中国创新创业大赛优秀组织单位进行表彰的通知",
+
+          color: "#1479D7"
+        },
+        {
+          timestamp: "科技部火炬中心关于组织第七届中国创新创业大赛优秀企业",
+
+          color: "#AFC3D4"
+        }
+      ]
+    };
+  },
   components: {
     NaviTitle
   }
@@ -249,7 +298,7 @@ export default {
 
 .quanguo-game-wrapper {
   width: 388px;
-  height: 97px;
+  height: 140px;
 
   border-top: solid 2px #53a8e8;
   border-left: solid 1px #c9dff2;
@@ -260,7 +309,7 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   /* justify-content: space-around; */
-  padding: 6px 17px;
+  padding: 16px 17px;
   box-sizing: border-box;
 }
 
@@ -325,6 +374,10 @@ height:30px; */
   border-left: solid 1px #c9dff2;
   border-right: solid 1px #c9dff2;
   border-bottom: solid 1px #c9dff2;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .quanguo-game-item {
@@ -335,10 +388,10 @@ height:30px; */
   color: #1f1f1f;
   font-size: 11px;
   text-align: center;
-  padding: 10px 20px;
+  padding: 0px 20px;
   box-sizing: border-box;
-  margin: 4px 6px;
-  /* line-height: 13px; */
+  margin: 5px 6px;
+  line-height: 33px;
 }
 
 .big-business {
@@ -353,8 +406,9 @@ height:30px; */
   height: 30px;
   width: 87px;
   border: dashed 1px #333;
-  margin-top: 6px;
+  margin-bottom: 16px;
   margin-right: 10px;
+
 }
 
 .center_content {
@@ -368,12 +422,17 @@ height:30px; */
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-top: 10px;
+}
+
+ul {
+  padding-inline-start: 0px;
 }
 
 .project-item {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:space-between;
   align-items: center;
   width: 195px;
   height: 192px;
@@ -391,6 +450,7 @@ height:30px; */
   color: rgba(31, 31, 31, 1);
   padding-top: 19px;
   text-align: center;
+  height: 30px;
 }
 
 .short-news {
@@ -411,6 +471,7 @@ height:30px; */
   display: flex;
   flex-direction: row;
   width: 100%;
+  padding-top: 10px;
 }
 
 .top-news-image {
