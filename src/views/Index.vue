@@ -218,7 +218,7 @@ export default {
   border: none;
   outline: none;
   background-color: rgba(243, 246, 248, 1);
-  margin:0 15px;
+  margin: 0 15px;
 }
 .search_btn {
   width: 81px;
@@ -350,8 +350,9 @@ export default {
   font-weight: bold;
   cursor: pointer;
 }
-.main_cont{
+.main_cont {
   position: absolute;
-  left: 34%;
+  width: 100%;
+  margin: 0 auto;
 }
 </style>
